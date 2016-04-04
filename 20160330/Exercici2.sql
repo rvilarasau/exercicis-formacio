@@ -1,0 +1,13 @@
+SELECT e.name as nombre_empleado, CASE WHEN c.name is NULL THEN 'No tiene clientes' ELSE c.name END AS Nombre_cliente
+FROM EMPLOYEE e LEFT JOIN CUSTOMER c ON (e.ID = c.EMPLOYEE_ID);
+
+SELECT c.NAME, e.NAME FROM EMPLOYEE e LEFT JOIN CUSTOMER c ON (e.ID = c.EMPLOYEE_ID) NVL(e.Name, 'No tiene clientes');
+
+SELECT c.NAME, e.NAME FROM EMPLOYEE e LEFT JOIN CUSTOMER c ON (e.ID = c.EMPLOYEE_ID);
+
+SELECT c.NAME, e.NAME FROM EMPLOYEE e LEFT JOIN CUSTOMER c ON (e.ID = c.EMPLOYEE_ID);
+
+SELECT e.NAME, CASE WHEN COUNT(c.name)=0 THEN 'No tiene clientes' ELSE COUNT(c.name) END AS numero_clientes 
+FROM EMPLOYEE e LEFT JOIN Customer c ON (e.ID = c.EMPLOYEE_ID) GROUP BY e.name ORDER BY e.name; 
+
+SELECT * FROM 
